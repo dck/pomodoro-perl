@@ -2,8 +2,8 @@
 
 use strict;
 use warnings;
-use constant WORK_TIME => 25 * 60;
-use constant BREAK_TIME => 5 * 60;
+use constant WORK_TIME => 25 * 60; # just useful for me
+use constant BREAK_TIME => 5 * 60; #
 
 my $toWork = "xset dpms force on";
 my $toBreak = "xset dpms force off";

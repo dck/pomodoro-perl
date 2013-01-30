@@ -2,27 +2,21 @@
 
 use strict;
 use warnings;
-use constant WORK_TIME => 25 * 60; # just useful for me
-use constant BREAK_TIME => 5 * 60; #
+use constant WORK_TIME => 30; # just useful for me
+use constant BREAK_TIME => 10; #
 
-my $toWork = "xset dpms force on";
-my $toBreak = "xset dpms force off";
+my $toWork = "vbetool dpms on";
+my $toBreak = "vbetool dpms off";
 my $shift = WORK_TIME;
 my $isWorking = 1;
 
 
 while( 1 )
 { 
-    if ($isWorking)
-    {
-        
+    if ($isWorking) {
         $shift = WORK_TIME;
-        print "Go to work\n";
         qx{ $toWork };
-    }
-    else
-    {
-        print "Go to break\n";
+    } else {
         $shift = BREAK_TIME;
         qx{ $toBreak };
     }

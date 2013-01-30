@@ -2,14 +2,13 @@
 
 use strict;
 use warnings;
-use constant WORK_TIME => 30; # just useful for me
-use constant BREAK_TIME => 10; #
+use constant WORK_TIME => 50 * 60;
+use constant BREAK_TIME => 10 * 60;
 
 my $toWork = "vbetool dpms on";
 my $toBreak = "vbetool dpms off";
 my $shift = WORK_TIME;
 my $isWorking = 1;
-
 
 while( 1 )
 { 
@@ -23,7 +22,6 @@ while( 1 )
     $isWorking = 1 - $isWorking;
     my $now = time;
     my $endtime = $now + $shift;
-    
     sleep $endtime - $now
 }
 
